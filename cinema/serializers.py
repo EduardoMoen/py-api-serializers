@@ -40,7 +40,7 @@ class MovieListSerializer(MovieSerializer):
     )
 
 
-class MovieRetriveSerializer(MovieSerializer):
+class MovieRetrieveSerializer(MovieSerializer):
     genres = GenreSerializer(many=True, read_only=True)
     actors = ActorSerializer(many=True, read_only=True)
 
@@ -73,6 +73,6 @@ class MovieSessionListSerializer(MovieSessionSerializer):
         ]
 
 
-class MovieSessionRetriveSerializer(MovieSessionSerializer):
+class MovieSessionRetrieveSerializer(MovieSessionSerializer):
     movie = MovieListSerializer(many=False, read_only=True)
     cinema_hall = CinemaHallSerializer(many=False, read_only=True)
